@@ -9,3 +9,4 @@ class Asset(BaseModel):
     purchase_date: str
     initial_cost: float
     operational_status: str
+    description: Optional[str] = None

@@ -10,4 +10,4 @@ def individual_serial(asset) -> dict:
     }
 
 def list_serial(assets) -> list:
-    return  [individual_serial(asset) for asset in  assets]
+    return  [individual_serial(asset) for asset in  assets] 
