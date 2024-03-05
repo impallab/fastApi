@@ -35,6 +35,10 @@ async def root():
                     margin: 0 auto;
                     margin-top: 100px;
                 }
+                .container:hover {
+                    box-shadow: 4px 4px 11px cyan;
+                    background-color: darkgray;
+                }
                 h1 {
                     color: blue;
                 }
@@ -55,7 +59,7 @@ async def root():
             <div class="container">
                 <h1>Welcome to Asset Performance Analytics Dashboard</h1>
                 <p>This is a sample FastAPI application serving as the backend for an Asset Performance Analytics Dashboard.</p>
-                <p>To explore the API documentation and test the endpoints, please go to <b><a href="/docs">/docs</a>.</b></p>
+                <p>To explore the API documentation and test the endpoints, please go to <b><a href="/docs">/docs</a></b></p>
             </div>
         </body>
     </html>
