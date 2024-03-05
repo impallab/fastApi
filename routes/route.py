@@ -60,7 +60,9 @@ async def update_asset(id: str, asset: Asset, authenticated: bool = Depends(auth
 @router.delete("/assets/{id}")
 async def delete_asset(id: str, authenticated: bool = Depends(authenticate_user)):
     try:
-        collection_assets.find_one_and_delete({"_id": ObjectId(id)})
+        result = collection_assets.find_one_and_delete({"_id": ObjectId(id)})
+        if result is None:
+            raise HTTPException(status_code=404, detail="Asset not found")
         return {"message": "Asset deleted successfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -114,7 +116,9 @@ async def update_performance_metrics(id: str, performance_metrics: PerformanceMe
 @router.delete("/performance_metrics/{id}")
 async def delete_performance_metrics(id: str, authenticated: bool = Depends(authenticate_user)):
     try:
-        collection_performance_metrics.find_one_and_delete({"_id": ObjectId(id)})
+        result = collection_performance_metrics.find_one_and_delete({"_id": ObjectId(id)})
+        if result is None:
+            raise HTTPException(status_code=404, detail="Performance metric not found")
         return {"message": "Performance metric deleted successfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
