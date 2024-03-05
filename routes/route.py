@@ -10,14 +10,6 @@ from bson import ObjectId
 
 router = APIRouter()
 
-# Home route :
-router.get("/")
-async def home():
-    return {
-        "message": "Welcome to the Assets and Performance Metrics Tracker API using fastAPI ",
-        "documentation": "/docs"
-    }
-
 security = HTTPBasic()
 
 # Function to authenticate users
