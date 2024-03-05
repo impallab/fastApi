@@ -1,7 +1,8 @@
 from pydantic import BaseModel
 
 class PerformanceMetrics(BaseModel):
-    asset_id: str
+    PerformanceMetrics_id: str
+    asset_name: str
     uptime: float
     downtime: float
     maintenance_costs: float
