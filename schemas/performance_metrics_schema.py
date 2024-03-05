@@ -1,6 +1,7 @@
 def individual_performance_metrics(performance_metric) -> dict:
     return {
-        "asset_id": str(performance_metric["asset_id"]),
+        "id": str(performance_metric["_id"]),
+        "asset_name": str(performance_metric["asset_name"]),
         "uptime": float(performance_metric["uptime"]),
         "downtime": float(performance_metric["downtime"]),
         "maintenance_costs": float(performance_metric["maintenance_costs"]),
